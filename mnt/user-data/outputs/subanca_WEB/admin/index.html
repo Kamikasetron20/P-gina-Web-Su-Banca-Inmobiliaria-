@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Administración | Su Banca</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="admin.css"></head><body>
+  <section id="panel" class="visible">
+    <div class="panel-box">
+      <!-- Header estilo contrato -->
+      <div class="panel-header">
+        <div class="panel-header-logo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <rect width="44" height="44" rx="5" fill="rgba(255,255,255,0.1)" />
+            <text x="22" y="29" text-anchor="middle" font-family="serif" font-weight="700" font-size="18"
+              fill="#C9A84C">SB</text>
+          </svg>
+          <div>
+            <div style="color:white;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600">Su Banca
+              Inmobiliaria S.A.S.</div>
+            <div style="color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase">Portal de
+              Asesores</div>
+          </div>
+        </div>
+        <h2>Gestión de Inmuebles</h2>
+        <p class="subtitle">NIT: 901.086.954-9 · Cra 81 N°32-204 Of.509 · subancainmobiliaria@gmail.com</p>
+      </div>
+      <div class="panel-body">
+
+        <!-- LOGIN -->
+        <div id="panel-login" class="panel-login">
+          <p class="panel-helper-text" style="margin-bottom:24px">Ingrese con sus credenciales de asesor</p>
+          <div class="form-group">
+            <label>Usuario</label>
+            <input type="text" id="login-user" placeholder="usuario@subanca.com">
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="login-pass" placeholder="••••••••">
+          </div>
+          <button class="submit-btn" onclick="doLogin()">Ingresar al panel</button>
+          
+        </div>
+
+        <!-- FORM NUEVO INMUEBLE -->
+        <div id="panel-content" class="panel-inmueble-form">
+          <div class="panel-flex-between" style="margin-bottom:28px">
+            <h3 class="panel-title">📋 Publicar nuevo inmueble</h3>
+            <button onclick="doLogout()" class="panel-logout-btn">Cerrar sesión</button>
+          </div>
+
+          <div class="fields-3 panel-section-space">
+            <div class="form-group">
+              <label>Tipo de gestión</label>
+              <select id="p-gestion">
+                <option>Arriendo</option>
+                <option>Venta</option>
+                <option>Amoblado</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tipo de inmueble</label>
+              <select id="p-tipo">
+                <option>Apartamento</option>
+                <option>Casa</option>
+                <option>Local</option>
+                <option>Bodega</option>
+                <option>Oficina</option>
+                <option>Lote</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estado</label>
+              <select id="p-estado">
+                <option>Disponible</option>
+                <option>Reservado</option>
+                <option>Arrendado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fields-2 panel-section-space">
+            <div class="form-group">
+              <label>Nombre / Referencia</label>
+              <input type="text" id="p-nombre" placeholder="Ej: Apto moderno El Poblado">
+            </div>
+            <div class="form-group">
+              <label>Sector / Barrio</label>
+              <select id="p-zona">
+                <option>El Poblado</option>
+                <option>Laureles</option>
+                <option>Envigado</option>
+                <option>Bello</option>
+                <option>Sabaneta</option>
+                <option>Itagüí</option>
+                <option>Robledo</option>
+                <option>Castilla</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Dirección (uso interno)</label>
+            <input type="text" id="p-dir" placeholder="Cl. 10 #43-50, Apto 301">
+          </div>
+
+          <div class="fields-3 panel-section-space">
+            <div class="form-group">
+              <label>Precio ($)</label>
+              <input type="number" id="p-precio" placeholder="1500000">
+            </div>
+            <div class="form-group">
+              <label>Habitaciones</label>
+              <select id="p-hab">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Baños</label>
+              <select id="p-ban">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fields-3 panel-section-space">
+            <div class="form-group">
+              <label>Área (m²)</label>
+              <input type="number" id="p-area" placeholder="75">
+            </div>
+            <div class="form-group">
+              <label>Parqueaderos</label>
+              <select id="p-park">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estrato</label>
+              <select id="p-estrato">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Descripción del inmueble</label>
+            <textarea id="p-desc" style="min-height:90px"
+              placeholder="Describe las características, acabados, comodidades..."></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Asesor responsable</label>
+            <select id="p-asesor">
+              <option>Sebastian Pernett</option>
+              <option>Maribel Jaramillo</option>
+              <option>Esneyder Calle</option>
+              <option>Santiago Pernett</option>
+            </select>
+          </div>
+
+          <div class="img-upload" onclick="document.getElementById('img-input').click()">
+            <div class="panel-upload-icon">📷</div>
+            <p>Haga clic para subir fotos del inmueble</p>
+            <p class="panel-upload-small">JPG, PNG · Máx. 10 fotos</p>
+            <input type="file" id="img-input" accept="image/*" multiple style="display:none"
+              onchange="previewImgs(event)">
+          </div>
+          <div class="img-preview" id="img-preview"></div>
+          <p class="img-order-help">
+            Arrastra las fotos para cambiar su orden.
+          </p>
+
+          <button id="publish-btn" class="submit-btn" style="margin-top:24px" onclick="publishProp()">✅ Publicar
+            inmueble</button>
+          <div class="success-msg" id="publish-success" style="margin-top:12px"></div>
+
+          <!-- LISTA MIS INMUEBLES -->
+          <div class="props-list-panel">
+            <h3>Mis inmuebles publicados</h3>
+            <div id="my-props-list"></div>
+          </div>
+        </div>
+      </div><!-- /panel-body -->
+    </div><!-- /panel-box -->
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="admin.js"></script></body></html>
