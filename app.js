@@ -70,8 +70,9 @@
         .map((z) => `<option value="${esc(z)}"></option>`).join('');
       render();
     } catch (e) {
+      console.error('Supabase error:', e);
       $('props-grid').innerHTML = ''; $('props-count').textContent = ''; $('load-more').hidden = true;
-      setState('error', 'No fue posible cargar las propiedades. Intente nuevamente.', true);
+      setState('error', 'No fue posible cargar las propiedades. Intente nuevamente. [' + (e && (e.code || e.message) || 'error') + ']', true);
     }
   }
 
@@ -203,7 +204,7 @@
   $('menu-close').addEventListener('click', () => menu(false));
   $('mobile-menu').addEventListener('click', (e) => { if (e.target.closest('a')) menu(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && $('mobile-menu').classList.contains('open')) menu(false); });
-  window.addEventListener('scroll', () => document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  window.addEventListener('scroll', () => document.querySelector('header > nav').classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 
   setTab('Arriendo');
   load();

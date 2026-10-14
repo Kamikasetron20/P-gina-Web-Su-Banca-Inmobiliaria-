@@ -45,8 +45,8 @@ section{padding:64px 5%}
 .search-btn:hover,.submit-btn:hover,.view-more-btn:hover,.services-cta-btn:hover,.nav-cta:hover,.mobile-cta:hover,.modal-whatsapp:hover{background:var(--gold-light)}
 
 /* ===== HEADER ===== */
-nav{position:fixed;inset:0 0 auto 0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 5%;background:var(--white);border-bottom:1px solid var(--border)}
-nav.scrolled{box-shadow:0 4px 16px rgba(15,23,42,.12)}
+header>nav{position:fixed;inset:0 0 auto 0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 5%;background:var(--white);border-bottom:1px solid var(--border)}
+header>nav.scrolled{box-shadow:0 4px 16px rgba(15,23,42,.12)}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
 .nav-logo img{width:44px;height:44px;object-fit:contain;border-radius:8px}
 .nav-logo-text{display:flex;flex-direction:column;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;line-height:1.2;color:var(--navy)}
