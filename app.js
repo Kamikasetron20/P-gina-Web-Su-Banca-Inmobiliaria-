@@ -58,9 +58,11 @@
     try {
       if (!window.supabase) throw new Error('sdk');
       const sb = window.supabase.createClient(SB_URL, SB_KEY);
-      const req = sb.from('propiedades').select(COLS)
-        .or('estado.eq.Disponible,estado.is.null')
-        .order('created_at', { ascending: false }).limit(200);
+      const req = sb.from('propiedades')
+        .select(COLS)
+        .eq('estado', 'Disponible')
+        .order('created_at', { ascending: false })
+        .limit(200);
       const { data, error } = await Promise.race([req, new Promise((_, r) => setTimeout(() => r(new Error('timeout')), 12000))]);
       if (error) throw error;
       all = (data || []).filter((p) => p && p.id).map(prep);

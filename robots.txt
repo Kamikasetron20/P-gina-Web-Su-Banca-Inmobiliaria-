@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kamikasetron20.github.io/subanca_WEB/sitemap.xml
+Sitemap: https://kamikasetron20.github.io/P-gina-Web-Su-Banca-Inmobiliaria-/sitemap.xml
